@@ -44,14 +44,29 @@
   </issueManagement>
   <distributionManagement>
     <snapshotRepository>
-      <id>sonatype-nexus-snapshots</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <id>artifact-registry</id>
+      <url>artifactregistry://us-west1-maven.pkg.dev/hzyi-186423/test-artifact-registry-maven</url>
     </snapshotRepository>
     <repository>
-      <id>sonatype-nexus-staging</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <id>artifact-registry</id>
+      <url>artifactregistry://us-west1-maven.pkg.dev/hzyi-186423/test-artifact-registry-maven</url>
     </repository>
   </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>artifact-registry</id>
+      <url>artifactregistry://us-west1-maven.pkg.dev/hzyi-186423/test-artifact-registry-maven</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+
   <licenses>
     <license>
       <name>Apache-2.0</name>
@@ -165,6 +180,8 @@
   </dependencyManagement>
 
   <build>
+
+
     <pluginManagement>
       <plugins>
         <plugin>
